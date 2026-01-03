@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <form action="">
+        <h1>Sign Up</h1>
+        <fieldset>
+            <legend>Your basic info</legend>
+            <label for="firstname">First Name:</label>
+            <input type="text" name="firstname" class="firstname" placeholder="first name" required>
+            <br>
+
+            <label for="lastname">Last Name:</label>
+            <input type="text" name="lastname" class="lastname" placeholder="last name" required>
+            <br>
+
+            <label for="email">Email:</label>
+            <input type="email" name="email" class="email" placeholder="xx@hotmail.com" required>
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" class="password" required>
+            <br>
+
+            <label for="confirmpassword">Password Confirm:</label>
+            <input type="password" name="confirmpassword" class="confirmpassword" required>
+            <br>
+        </fieldset>
+        <br>
+
+
+        <fieldset>
+            <legend>Other info</legend>
+            <label for="birth">Date of Birth:</label>
+            <input type="date" name="birth" class="birth" required>
+            <br>
+
+            <label for="gender">Gender:</label>
+            <input type="radio" name="gender" id="Male" checked>
+            <input type="radio" name="gender" id="Female">
+            <input type="radio" name="gender" id="Other">
+            <br>
+
+            <label for="aboutme">About Me:</label>
+            <input type="textarea" name="aboutme" row="10" col="50">
+            <br>
+
+            <label for="profession">Profession</label>
+            <select name="profession" id="profession">
+                <option value="default">Please select your profession</option>
+                <option value="Web Development">Web Development</option>
+                <option value="Data Analytics">Data Analytics</option>
+                <option value="UI/UX Design">UI/UX Design</option>
+            </select>
+        </fieldset>
+
+        <fieldset>
+            <input type="checkbox" name="terms" required>
+            <label for="terms">I'm accepting Terms and Condotions</label>
+            <button type="submit">Sign Up</button>
+            <button type="reset">Reset</button>
+        </fieldset>
+
+    </form>
+</body>
+
+</html>
