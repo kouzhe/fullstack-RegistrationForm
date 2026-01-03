@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <form action="mailto:kouzhe87@hotmail.com" method="post" name="registeration">
+    <form action="mailto:kouzhe87@hotmail.com" method="post" name="registeration" onsubmit="return validatePasswords()">
         <h1>Sign Up</h1>
         <fieldset>
             <legend>Your basic info</legend>
@@ -22,11 +22,13 @@
             <br>
 
             <label for="email">Email:</label>
-            <input type="email" name="email" class="textInput" placeholder="xx@hotmail.com" required>
+            <input type="email" name="email" class="textInput" placeholder="xx@hotmail.com" maxlength="254" required>
             <br>
 
             <label for="password">Password:</label>
-            <input type="password" name="password" class="textInput" required>
+            <input type="password" name="password" class="textInput" required minlength="8"
+                pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}"
+                title="Password must be at least 8 characters and include uppercase, lowercase, number, and special character">
             <br>
 
             <label for="confirmpassword">Password Confirm:</label>
@@ -57,7 +59,7 @@
             <br>
 
             <label for="profession">Profession</label>
-            <select name="profession" id="profession">
+            <select name="profession" id="profession" required>
                 <option value="default">Please select your profession</option>
                 <option value="Web Development">Web Development</option>
                 <option value="Data Analytics">Data Analytics</option>
@@ -76,3 +78,17 @@
 </body>
 
 </html>
+
+<script>
+    function validatePasswords() {
+        const password = document.querySelector('input[name="password"]');
+        const confirm = document.querySelector('input[name="confirmpassword"]');
+
+        if (password.value !== confirm.value) {
+            confirm.setCustomValidity('Passwords do not match');
+            return false; // 阻止提交
+        }
+        confirm.setCustomValidity('');
+        return true; // 允许提交
+    }
+</script>
