@@ -96,3 +96,50 @@ legend::before {
     width: 300px;
   }
 }
+
+/* 鼠标移上去，背景变深、文字变白 */
+/* .signup-btn .reset-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.signup-btn:hover{
+  background-color: #333;
+  color: white;
+}
+
+.reset-btn:hover {
+  background-color: #333;
+  color: white;
+} */
+
+/* 颜色平滑变化 微微上浮 */
+.signup-btn {
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  /* 变成手指了 */
+  cursor: pointer;
+
+  transition: background-color 0.3s ease,
+              transform 0.2s ease;
+}
+
+.signup-btn:hover {
+  background-color: #388E3C;
+  transform: translateY(-2px);
+}
+
+/* 按下效果 “被压下去”的感觉 */
+.signup-btn:active {
+  transform: translateY(0);
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* 键盘可访问性（Tab 键）- 外面的border变颜色了 */
+.signup-btn:focus-visible {
+  outline: 3px solid #90EE90;
+}
